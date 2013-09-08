@@ -1,10 +1,10 @@
 {
-   "abstract" : "IRC reaction bot framework",
+   "abstract" : "Skype reaction bot framework",
    "author" : [
-      "Masayuki Matsuki <y.songmu@gmail.com>"
+      "Takumi Akiyama <t.akiym@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.5.6, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Minilla/v0.5.6, CPAN::Meta::Converter version 2.130880",
    "license" : [
       "perl_5"
    ],
@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "UnazuSan",
+   "name" : "UnazuChan",
    "no_index" : {
       "directory" : [
          "t",
@@ -42,8 +42,8 @@
       },
       "runtime" : {
          "requires" : {
-            "AnySan" : "0.10",
-            "perl" : "5.010"
+            "Skype::Any" : "0",
+            "perl" : "5.008005"
          }
       },
       "test" : {
@@ -55,14 +55,17 @@
    "release_status" : "unstable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/Songmu/p5-UnazuSan/issues"
+         "web" : "https://github.com/akiym/p5-UnazuChan/issues"
       },
-      "homepage" : "https://github.com/Songmu/p5-UnazuSan",
+      "homepage" : "https://github.com/akiym/p5-UnazuChan",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com/Songmu/p5-UnazuSan.git",
-         "web" : "https://github.com/Songmu/p5-UnazuSan"
+         "url" : "git://github.com/akiym/p5-UnazuChan.git",
+         "web" : "https://github.com/akiym/p5-UnazuChan"
       }
    },
-   "version" : "0.02"
+   "version" : "0.01",
+   "x_contributors" : [
+      "Masayuki Matsuki <y.songmu@gmail.com>"
+   ]
 }

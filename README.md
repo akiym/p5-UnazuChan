@@ -1,42 +1,54 @@
 # NAME
 
-UnazuSan - IRC reaction bot framework
+UnazuChan - Skype reaction bot framework
 
 # SYNOPSIS
 
-    use UnazuSan;
-    my $unazu_san = UnazuSan->new(
-        host       => 'example.com',
-        password   => 'xxxxxxxx',
-        enable_ssl => 1,
-        join_channels => [qw/test/],
+    use 5.010;
+    use UnazuChan;
+    my $unazu_chan = UnazuChan->new(
+        active_chats => ['#anappo2/$d936403094338dbb'],
     );
-    $unazu_san->on_message(
-        qr/^unazu_san:/ => sub {
-            my $receive = shift;
-            $receive->reply('うんうん');
+    $unazu_chan->on_message(
+        qr/^unazu_chan:/ => sub {
+            my $msg = shift;
+            $msg->chat->send_message('うんうん');
         },
         qr/(.)/ => sub {
-            my ($receive, $match) = @_;
+            my ($msg, $match) = @_;
             say $match;
-            say $receive->message;
+            say $msg->message;
         },
     );
-    $unazu_san->run;
+    $unazu_chan->on_command(
+        help => sub {
+            my ($msg, @args) = @_;
+            $msg->chat->send_message('help '. ($args[0] || ''));
+        }
+    );
+    $unazu_chan->run;
 
 # DESCRIPTION
 
-UnazuSan is IRC reaction bot framework.
+UnazuChan is Skype reaction bot framework.
 
 __THE SOFTWARE IS ALPHA QUALITY. API MAY CHANGE WITHOUT NOTICE.__
 
+# SEE ALSO
+
+[Skype::Any](http://search.cpan.org/perldoc?Skype::Any)
+
+# THANKS TO
+
+Masayuki Matsuki (songumu)
+
 # LICENSE
 
-Copyright (C) Masayuki Matsuki.
+Copyright (C) Takumi Akiyama.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 # AUTHOR
 
-Masayuki Matsuki <y.songmu@gmail.com>
+Takumi Akiyama <t.akiym@gmail.com>

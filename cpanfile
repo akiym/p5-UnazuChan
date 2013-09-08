@@ -1,4 +1,4 @@
-requires 'AnySan', '0.10';
+requires 'Skype::Any';
 requires 'perl', '5.008001';
 
 on 'test' => sub {
